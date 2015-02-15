@@ -1,0 +1,27 @@
+import sys, math
+
+# Auto-generated code below aims at helping you parse
+# the standard input according to the problem statement.
+
+N = int(raw_input()) # the number of temperatures to analyse
+
+if(N == 0):
+    print "0"
+
+TEMPS = raw_input() # the N temperatures expressed as integers ranging from -273 to 5526
+
+# Write an action using print
+# To debug: print >> sys.stderr, "Debug messages..."
+
+TEMPS_list = TEMPS.split(" ") 
+
+TEMPS_list_int = map(int, TEMPS_list) 
+
+#account for preferring the positive integers
+TEMPS_list_added_a_bit = [x-0.001 for x in TEMPS_list_int]
+
+TEMPS_list_abs = map(abs, TEMPS_list_added_a_bit) 
+
+val, idx = min((val, idx) for (idx, val) in enumerate(TEMPS_list_abs))
+
+print TEMPS_list[idx]
