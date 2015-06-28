@@ -1,0 +1,30 @@
+#doesn't work, not close
+
+import sys, math
+
+num_letters = 27
+L = int(raw_input())
+H = int(raw_input())
+T = raw_input()
+print T
+a = raw_input()
+first_rows = []
+#create a dictionary with entry number equal to the number of letters
+#iterate over this dictionary to create the ASCI letters 
+
+for i in xrange(H-1):
+    ROW = raw_input()
+    print ROW
+    for j in xrange(num_letters): 
+        first_row = []
+        for k in xrange(L): 
+            temp = ROW[(j*k)+k]
+            print temp
+            first_row.append(temp)
+        first_rows.append(first_row)
+    #ROW = raw_input()
+    
+print first_rows
+# Write an action using print
+# To debug: print >> sys.stderr, "Debug messages..."
+
